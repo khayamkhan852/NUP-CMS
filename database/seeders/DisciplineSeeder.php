@@ -23,7 +23,7 @@ class DisciplineSeeder extends Seeder
             ['name' => 'Psychology'],
             ['name' => 'Bachelor of Business Administration', 'code' => 'BBA'],
             ['name' => 'Information Technology', 'code' => 'IT'],
-            ['name' => 'Health & Physical'],
+            ['name' => 'Health & Physical Education'],
             ['name' => 'Fine Arts'],
             ['name' => 'Political Science'],
             ['name' => 'Botany'],
