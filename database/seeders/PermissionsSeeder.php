@@ -8,16 +8,34 @@ use Illuminate\Support\Carbon;
 use Spatie\Permission\Models\Permission;
 class PermissionsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $permissions = [
-            ['name' => 'user.view'],
-            ['name' => 'user.create'],
-            ['name' => 'user.update'],
-            ['name' => 'user.delete'],
+
+            // settings
+            ['name' => 'roles_and_permissions.view'],
+            ['name' => 'roles_and_permissions.create'],
+            ['name' => 'roles_and_permissions.update'],
+            ['name' => 'roles_and_permissions.delete'],
+
+            ['name' => 'users.view'],
+            ['name' => 'users.create'],
+            ['name' => 'users.update'],
+            ['name' => 'users.delete'],
+
+            ['name' => 'sections.view'],
+            ['name' => 'sections.create'],
+            ['name' => 'sections.update'],
+            ['name' => 'sections.delete'],
+
+            ['name' => 'disciplines.view'],
+            ['name' => 'disciplines.create'],
+            ['name' => 'disciplines.update'],
+
+            ['name' => 'colleges.view'],
+            ['name' => 'colleges.create'],
+            ['name' => 'colleges.update'],
+            ['name' => 'colleges.delete'],
         ];
 
         $insert_data = [];

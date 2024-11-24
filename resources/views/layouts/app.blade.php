@@ -12,7 +12,9 @@
         <link href="{{ asset('theme/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 
         <!-- Gritter -->
-        <link href="{{ asset('theme/js/plugins/gritter/jquery.gritter.css') }} " rel="stylesheet">
+        <link href="{{ asset('theme/js/plugins/gritter/jquery.gritter.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('theme/css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
 
         <link href="{{ asset('theme/css/animate.css') }}" rel="stylesheet">
         <link href="{{ asset('theme/css/style.css') }}" rel="stylesheet">
@@ -31,9 +33,7 @@
             <div id="page-wrapper" class="gray-bg">
                 @include('layouts.partials.top-bar')
 
-                <div class="wrapper wrapper-content animated fadeInRight">
-                    @yield('content')
-                </div>
+                @yield('content')
 
                 <div class="footer">
                     <div>
@@ -50,6 +50,8 @@
         <script src="{{ asset('theme/js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
         <script src="{{ asset('theme/js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
 
+        <script src="{{ asset('theme/js/plugins/dataTables/datatables.min.js') }}"></script>
+
         <!-- Custom and plugin javascript -->
         <script src="{{ asset('theme/js/inspinia.js') }}"></script>
         <script src="{{ asset('theme/js/plugins/pace/pace.min.js') }}"></script>
@@ -59,6 +61,8 @@
 
         <!-- GITTER -->
         <script src="{{ asset('theme/js/plugins/gritter/jquery.gritter.min.js') }}"></script>
+        @include('sweetalert::alert')
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         @yield('javascript')
     </body>
 </html>

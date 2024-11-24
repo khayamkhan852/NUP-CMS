@@ -16,6 +16,26 @@
             <li class="{{ request()->routeIs('dashboard.index') ? 'active' : '' }}">
                 <a href="{{ route('dashboard.index') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
             </li>
+
+            @canany(['roles_and_permissions.view', 'users.view', 'sections.view', 'disciplines.view', 'colleges.view'])
+                <li class="{{ request()->routeIs('settings.*') ? 'active' : '' }}">
+                    <a href="#" aria-expanded="true"><i class="fa fa-gears"></i>
+                        <span class="nav-label">Settings</span><span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level collapse {{ request()->routeIs('settings.*') ? 'in' : '' }}" aria-expanded="true" style="">
+                        @can('disciplines.view')
+                            <li class="{{ request()->routeIs('settings.disciplines.*') ? 'active' : '' }}">
+                                <a href="{{ route('settings.disciplines.index') }}">Disciplines</a>
+                            </li>
+                        @endcan
+                        @can('colleges.view')
+                            <li class="{{ request()->routeIs('settings.colleges.*') ? 'active' : '' }}">
+                                <a href="{{ route('settings.colleges.index') }}">Colleges</a>
+                            </li>
+                        @endcan
+                    </ul>
+                </li>
+            @endcanany
         </ul>
     </div>
 </nav>
